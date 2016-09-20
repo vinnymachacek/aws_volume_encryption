@@ -112,9 +112,8 @@ def main(argv):
 
         for volume in volumes:
             # Save original mappings to persist to new volume
-            for volume in volumes:
-            # Save original mappings to persist to new volume
             original_mappings = volume.attachments[0]
+
             """ Step 2: Take snapshot of volume """
             print('---Create snapshot of volume ({})'.format(volume.volume_id))
             snapshot = ec2.create_snapshot(
@@ -221,7 +220,7 @@ def main(argv):
                 snapshot_encrypted.delete()
             if args.delete_original_volume:
                 print('Deleting original volume')
-                #volume.delete()
+                volume.delete()
             print('Encryption finished')
         print('---Restart instance')
         instance.start()
