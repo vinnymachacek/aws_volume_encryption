@@ -220,7 +220,6 @@ def main(argv):
                 snapshot_encrypted.delete()
             if args.delete_original_volume:
                 print('Deleting original volume')
-                volume.delete()
             print('Encryption finished')
         print('---Restart instance')
         instance.start()
