@@ -218,7 +218,7 @@ def main(argv):
                 print('Deleting intermediate snapshots')
                 snapshot.delete()
                 snapshot_encrypted.delete()
-            if args.delete_original_volume:
+            if args.delete_original_volumes:
                 print('Deleting original volume')
             print('Encryption finished')
         print('---Restart instance')
