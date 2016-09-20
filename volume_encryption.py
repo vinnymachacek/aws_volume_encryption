@@ -112,8 +112,9 @@ def main(argv):
 
         for volume in volumes:
             # Save original mappings to persist to new volume
-            original_mappings = volume.attachments
-
+            for volume in volumes:
+            # Save original mappings to persist to new volume
+            original_mappings = volume.attachments[0]
             """ Step 2: Take snapshot of volume """
             print('---Create snapshot of volume ({})'.format(volume.volume_id))
             snapshot = ec2.create_snapshot(
